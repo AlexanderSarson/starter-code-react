@@ -19,7 +19,7 @@ cache:
   directories:
     - '~/.cache'
 install:
-  - npm ci
+  - yarn ci
 script:
   - yarn run test:coverage
   - sonar-scanner
