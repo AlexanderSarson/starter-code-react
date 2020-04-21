@@ -1,9 +1,11 @@
 language: node_js
 node_js:
   - lts/*
-dist: trusty
+#Using Ubuntu 18.04 bionic for build
+dist: bionic
 env:
   global:
+    #run firefox in headless mode because of automated testing
     - MOZ_HEADLESS=1
 addons:
   firefox: latest
@@ -13,18 +15,24 @@ addons:
       secure: 'VUXCAM0QPm4B/OiuhWE88XhcZkAgjWSvh7ma09PJCaDf2bmILeRBwDDyPx/EUo086xW7QlgIhQeuvp2pFFyVfmtAYLhCX6gmOwvrk++Is8GNAYkds1lySx6VWR2twulGYBOf7YIKe17QKKE0RF62GJlLiLLRuKpzZuvjK5Irb4Tb0OV/dnJ29WdIjPAgJx2091AnT9z9gIpbLkmrMlowVGEU+XKg2qhCjWnmD6Z73B6/YKon22suY2M8W3RsWmKUXYySEHJaxtWqE1gIhtzWFcLu8HGmtmNzHFkrnW0G1Nz2ZLJfhby7U7BzVLSkKDhYbWtDIJX51gz6E/UtQnTUDDt3uYsu0i7DJALc8H2ItxzRrCmjOem5paBxF7kE+T7wSD0xw3i9eJGfhjKyS9IIf2vl1A6IvRQ/CT73EfSyC1wf8L4PkMgnxz0A1KKDmHHpO0xzwc3gUNBI3qgMJ1R/bf5DhLN1mHO1ecAgbNtjBSSJO2xjYZDWq7xzgeCXUofRL35aXIhQPsKcy16kukHetsvPj56q3OzOb3GBN95pA0VJsM/n6aZY2+Q64IaM8XBGUCYwDzhTHt4IMPTzW1QMZLkLEj2mQWIxVCxwPUJVKPQHr8Uq9sSFhB8QU960PspxBsuZtakBtn7NQw0DUweiPxeCI3cl+qBbg5hr5cLOYqI='
   apt:
     packages:
+      #dependency needed to run cypress tests
       - libgconf-2-4
 cache:
-  npm: true
   directories:
+    #Cypress cache
     - '~/.cache'
 install:
+  #Like npm install but used in automated environments to make sure it does a clean install of dependencies and it can be significantly faster. (you must have a package-lock.json)
   - npm ci
 script:
+  #runs jest coverage
   - npm run test:coverage
+  #starts sonar analyze step
   - sonar-scanner
+  #parcel builds project
   - npm run build
 deploy:
+  #Deploys build to surge
   provider: surge
   project: './dist/'
   domain: https://alexandersarson-starter.surge.sh
