@@ -19,11 +19,11 @@ cache:
   directories:
     - '~/.cache'
 install:
-  - yarn ci
+  - npm ci
 script:
-  - yarn run test:coverage
+  - npm run test:coverage
   - sonar-scanner
-  - yarn run build
+  - npm run build
 deploy:
   provider: surge
   project: './build/'
