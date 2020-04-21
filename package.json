@@ -2,7 +2,7 @@
   "name": "react-starter-code",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.js",
+  "main": "src/index.html",
   "dependencies": {
     "@material-ui/core": "^4.9.11",
     "@material-ui/icons": "^4.9.1",
@@ -29,12 +29,13 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^3.0.0",
     "jest": "^25.4.0",
-    "parcel": "^2.0.0-alpha.3.2",
+    "parcel-bundler": "^1.12.4",
     "prettier": "^2.0.4",
     "react-test-renderer": "^16.13.1"
   },
   "scripts": {
     "dev": "parcel src/index.html",
+    "build": "parcel build ./src/index.html",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "test": "jest",

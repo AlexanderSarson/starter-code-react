@@ -26,6 +26,6 @@ script:
   - npm run build
 deploy:
   provider: surge
-  project: './build/'
+  project: './dist/'
   domain: https://alexandersarson-starter.surge.sh
   skip_cleanup: true
