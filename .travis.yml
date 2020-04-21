@@ -23,9 +23,10 @@ install:
 script:
   - npm run test:coverage
   - sonar-scanner
-  - npm run build
 deploy:
-  provider: surge
-  project: './dist/'
-  domain: https://alexandersarson-starter.surge.sh
-  skip_cleanup: true
+  - provider: script
+    script: npm run build
+  - provider: surge
+    project: './dist/'
+    domain: https://alexandersarson-starter.surge.sh
+    skip_cleanup: true
