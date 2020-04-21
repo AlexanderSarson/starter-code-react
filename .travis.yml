@@ -1,4 +1,5 @@
 language: node_js
+# node long term servicing version
 node_js:
   - lts/*
 #Using Ubuntu 18.04 bionic for build
