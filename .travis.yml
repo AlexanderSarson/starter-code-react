@@ -25,10 +25,10 @@ install:
 
 script:
   - sonar-scanner
-  - npm run test:coverage
+  - yarn run test:coverage
   #- npm start & wait-on http://localhost:3000
   #- cypress run --browser firefox --record --key f3485b7b-fc97-462d-ba5f-7d93876c3c3e
-  - npm run build
+  - yarn run build
 deploy:
   provider: surge
   project: './build/'
