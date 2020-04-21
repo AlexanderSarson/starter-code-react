@@ -10,7 +10,7 @@ addons:
   sonarcloud:
     organization: alexandersarson
     token:
-      secure: $SONAR_TOKEN
+      secure: 'VUXCAM0QPm4B/OiuhWE88XhcZkAgjWSvh7ma09PJCaDf2bmILeRBwDDyPx/EUo086xW7QlgIhQeuvp2pFFyVfmtAYLhCX6gmOwvrk++Is8GNAYkds1lySx6VWR2twulGYBOf7YIKe17QKKE0RF62GJlLiLLRuKpzZuvjK5Irb4Tb0OV/dnJ29WdIjPAgJx2091AnT9z9gIpbLkmrMlowVGEU+XKg2qhCjWnmD6Z73B6/YKon22suY2M8W3RsWmKUXYySEHJaxtWqE1gIhtzWFcLu8HGmtmNzHFkrnW0G1Nz2ZLJfhby7U7BzVLSkKDhYbWtDIJX51gz6E/UtQnTUDDt3uYsu0i7DJALc8H2ItxzRrCmjOem5paBxF7kE+T7wSD0xw3i9eJGfhjKyS9IIf2vl1A6IvRQ/CT73EfSyC1wf8L4PkMgnxz0A1KKDmHHpO0xzwc3gUNBI3qgMJ1R/bf5DhLN1mHO1ecAgbNtjBSSJO2xjYZDWq7xzgeCXUofRL35aXIhQPsKcy16kukHetsvPj56q3OzOb3GBN95pA0VJsM/n6aZY2+Q64IaM8XBGUCYwDzhTHt4IMPTzW1QMZLkLEj2mQWIxVCxwPUJVKPQHr8Uq9sSFhB8QU960PspxBsuZtakBtn7NQw0DUweiPxeCI3cl+qBbg5hr5cLOYqI='
   apt:
     packages:
       - libgconf-2-4
